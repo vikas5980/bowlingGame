@@ -32,18 +32,6 @@ class Frame
     int getNoOfPinsKnockedDownTry(int idx);
 };
 
-Frame::Frame()
-{
-    memset(&noOfPinsKnockedDownTry, 0, sizeof(noOfPinsKnockedDownTry));
-
-    frameScore = 0;
-    previousFrameScore = 0;
-    isBonusReceivedInThisFrame = false;
-    isFrameScoreCalculated = false;
-    isFramePresent = false;
-    bonusType = NONE;
-}
-
 class BowlingGame
 {
     int f;
@@ -56,6 +44,18 @@ class BowlingGame
     BowlingGame();
     void start(void);
 };
+
+Frame::Frame()
+{
+    memset(&noOfPinsKnockedDownTry, 0, sizeof(noOfPinsKnockedDownTry));
+
+    frameScore = 0;
+    previousFrameScore = 0;
+    isBonusReceivedInThisFrame = false;
+    isFrameScoreCalculated = false;
+    isFramePresent = false;
+    bonusType = NONE;
+}
 
 void Frame::calculateFrameScore(Frame &frame1, Frame &frame2)
 {
